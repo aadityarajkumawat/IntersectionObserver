@@ -50,20 +50,20 @@ html, body {
 
 .sec1 img {
     width: 100%;
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
 .fade-in {
-    animation: moveup 0.7s forwards ease-out;
+    animation: moveup 1s forwards ease-out;
 }
 
 @keyframes moveup {
     0% {
-        transform: translateY(40px);
         opacity: 0;
+        transform: translateY(40px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(20px);
     }
 }
