@@ -3,21 +3,20 @@ const listOfImages = document.querySelectorAll('.images');
 let options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2,
+    threshold: 0.01,
 }
 
 let pervRatio = 0.0;
 
-let handelIntersection = (enteries, obeserver) => {
+let handelIntersection = (enteries) => {
     enteries.forEach(entry => {
-        if (entry.intersectionRatio > pervRatio) {
+        if (entry.intersectionRatio > 0) {
             entry.target.classList.add('fade-in');
         }
-        pervRatio = entry.intersectionRatio;
     });
 }
 
 let obeserver = new IntersectionObserver(handelIntersection, options);
 for (let image of listOfImages) {
-    obeserver.observe(image)
+    obeserver.observe(image);
 }
